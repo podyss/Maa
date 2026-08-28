@@ -1,0 +1,225 @@
+{
+    "$__mpe_config_新建Pipeline1": {
+        "$__mpe_code": {
+            "coordinateMode": "absolute-v1",
+            "filename": "新建Pipeline1",
+            "prefix": "",
+            "savedViewport": {
+                "x": -611,
+                "y": 174,
+                "zoom": 1
+            },
+            "version": "v1.9.1"
+        }
+    },
+    "再次识别价格": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1292,
+                "y": 56
+            }
+        },
+        "next": [
+            "购买"
+        ],
+        "recognition": {
+            "param": {
+                "expected": [
+                    "^([0-9]|[1-9][0-9]{1,3}|[12][0-9]{4})$"
+                ],
+                "roi": [
+                    869,
+                    483,
+                    43,
+                    24
+                ]
+            },
+            "type": "OCR"
+        },
+        "timeout": 500
+    },
+    "开始": {
+        "$__mpe_code": {
+            "position": {
+                "x": 12,
+                "y": 176
+            }
+        },
+        "next": [
+            "识别物品"
+        ]
+    },
+    "识别价格": {
+        "$__mpe_code": {
+            "position": {
+                "x": 652,
+                "y": 56
+            }
+        },
+        "next": [
+            "调整购买数量"
+        ],
+        "recognition": {
+            "param": {
+                "expected": [
+                    "^([0-9]|[1-9][0-9]{1,3}|[12][0-9]{4})$"
+                ],
+                "roi": [
+                    869,
+                    483,
+                    43,
+                    24
+                ]
+            },
+            "type": "OCR"
+        },
+        "timeout": 500
+    },
+    "识别物品": {
+        "$__mpe_code": {
+            "position": {
+                "x": 332,
+                "y": 129
+            }
+        },
+        "action": {
+            "param": {
+                "target_offset": [
+                    29,
+                    41,
+                    44,
+                    60
+                ]
+            },
+            "type": "Click"
+        },
+        "next": [
+            "识别价格",
+            "退出_1"
+        ],
+        "recognition": {
+            "param": {
+                "expected": [
+                    "伞绳"
+                ],
+                "roi": [
+                    223,
+                    137,
+                    912,
+                    503
+                ]
+            },
+            "type": "OCR"
+        }
+    },
+    "识别结果": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1932,
+                "y": 12
+            }
+        },
+        "next": [
+            "退出_2"
+        ],
+        "recognition": {
+            "param": {
+                "expected": [
+                    "购买结果"
+                ],
+                "roi": [
+                    515,
+                    169,
+                    133,
+                    65
+                ]
+            },
+            "type": "OCR"
+        },
+        "timeout": 500
+    },
+    "调整购买数量": {
+        "$__mpe_code": {
+            "position": {
+                "x": 972,
+                "y": 71
+            }
+        },
+        "action": {
+            "param": {
+                "target": [
+                    883,
+                    457,
+                    16,
+                    13
+                ]
+            },
+            "type": "Click"
+        },
+        "next": [
+            "再次识别价格",
+            "退出_1"
+        ],
+        "repeat": 6
+    },
+    "购买": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1612,
+                "y": 57
+            }
+        },
+        "action": {
+            "param": {
+                "target": [
+                    826,
+                    527,
+                    38,
+                    19
+                ]
+            },
+            "type": "Click"
+        },
+        "next": [
+            "识别结果"
+        ]
+    },
+    "退出_1": {
+        "$__mpe_code": {
+            "position": {
+                "x": 652,
+                "y": 399
+            }
+        },
+        "action": {
+            "param": {
+                "key": [
+                    27
+                ]
+            },
+            "type": "ClickKey"
+        },
+        "next": [
+            "识别物品"
+        ]
+    },
+    "退出_2": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2252,
+                "y": 87
+            }
+        },
+        "action": {
+            "param": {
+                "key": [
+                    27
+                ]
+            },
+            "type": "ClickKey"
+        },
+        "next": [
+            "再次识别价格"
+        ]
+    }
+}
